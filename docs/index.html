@@ -14,11 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script>
        var myHeaders = new Headers();
-myHeaders.append("Authorization", "Basic X1Y4N1F0YjUxM0NkM3ZhYk03UkMwVGJ0SldlU284cDc6czIvYWJjZGVmZ2hpamtsbW5vcC9iNzRjMmZhOTFmYjBhMDk3NTVlMzc3ZWU4ZTIwYWE4NmQyYjkyYzNkMmYyNzcyODBkYjU5NWY2MzZiYjE5MGU2");
+myHeaders.append("Authorization", "Basic SzdMNkY0UDdid0h4SjAxbUhqOEtkTDN6bzY1NTU2T3M6czIvYWJjZGVmZ2hpamtsbW5vcC9kZDA2MDY4OTlkNTRlMzVkMDFmYmZhNDJjMWRiZjE0NmZjNzhiMjM0NmIyOGNlZWZlMjIwZjU0YzRhMjAxOWMy");
 myHeaders.append("User-Agent", "uelib v6.8");
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({"command":"cc:sale","amount":"5.00","amount_detail":{"tax":"1.00","tip":"0.50"},"creditcard":{"cardholder":"John doe","number":"4000100011112224","expiration":"0919","cvc":"123","avs_street":"1234 Main","avs_zip":"12345"},"invoice":"12356"});
+var raw = JSON.stringify({ "command": "cc:sale","amount": "1.00","amount_detail": {                     "tax": "0.01",                     "tip": "0.01"                 },                 "creditcard": {                     "cardholder": "Max Palli",                     "number": "4551038282575567",                     "expiration": "1025",                     "cvc": "633",                     "avs_street": "Max Palli Steet",                     "avs_zip": "04001"                 },                 "invoice": "12356"                 });
 
 var requestOptions = {
   method: 'POST',
@@ -27,7 +27,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://sandbox.usaepay.com/api/v2/transactions", requestOptions)
+fetch("https://usaepay.com/api/v2/transactions", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
